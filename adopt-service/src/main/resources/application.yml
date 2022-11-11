@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /api/adopt
+  port: 8182
+
+spring:
+  application:
+    name: adopt-service
+  datasource:
+    url: jdbc:mysql://52.164.221.212:23307/devopz
+    username: root
+    password: sP539#&I
+    hikari:
+      maximum-pool-size: 10
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+        jdbc:
+          time_zone: UTC

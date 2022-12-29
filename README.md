@@ -25,3 +25,9 @@ sudo docker run --rm hello-world
  "insecure-registries":["jenkins:5000"]
 }
 ~~~
+
+- Uygulama dizini oluşturulur
+~~~
+sudo mkdir /opt/cihanca-devopz
+sudo setfacl -m u:jenkins:wx /opt/cihanca-devopz
+~~~

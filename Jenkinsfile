@@ -4,18 +4,39 @@ pipeline {
     environment {
         PROJECT_NAME = 'cihanca-devopz'
         APP_SERVER = '192.168.1.28'
+        DOCKER_REGISTRY = 'localhost:5000'
     }    
 
     stages {
 
-        stage('Build') {
+        stage('Build jar packages') {
             steps {
-                echo 'Building..'
+                echo 'Building jar packages'
                 sh '''
                     cd $PROJECT_NAME && pwd && ls -al
                     mvn clean package -DskipTests
                 '''
             }
+        }
+
+        stage('Build docker images') {
+            steps {
+                echo 'Building Docker images'
+                sh '''
+                    docker build -t user-management user-management
+                    docker build -t adopt-service adopt-service
+                '''
+                echo 'Tag & Push Docker images'
+                sh '''
+                    docker tag user-management $DOCKER_REGISTRY/user-management
+                    docker push $DOCKER_REGISTRY/user-management
+
+                    docker tag adopt-service $DOCKER_REGISTRY/adopt-service
+                    docker push $DOCKER_REGISTRY/adopt-service
+                '''
+            }
+
+
         }
 
 

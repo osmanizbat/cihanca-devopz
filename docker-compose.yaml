@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  adopt-service:
+    build: ./adopt-service
+
+  # user-management:
+  #   image: eclipse-temurin:17-jre
+  #   entrypoint: java -version   

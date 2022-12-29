@@ -6,6 +6,8 @@ services:
     restart: always
     ports:
       - 8182:8182
+    deploy:
+      replicas: 2      
 
   user-management:
     image: jenkins:5000/user-management

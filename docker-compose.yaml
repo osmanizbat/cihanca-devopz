@@ -3,11 +3,13 @@ version: "3"
 services:
   adopt-service:
     image: jenkins:5000/adopt-service
+    restart: always
     ports:
       - 8182:8182
 
   user-management:
     image: jenkins:5000/user-management
+    restart: always
     ports:
       - 8181:8181
 

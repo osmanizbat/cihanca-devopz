@@ -17,6 +17,8 @@ docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ~~~
 sudo apt install docker.io docker-compose
 sudo docker run --rm hello-world
+sudo usermod -aG docker $USER
+sudo usermod -aG docker jenkins
 ~~~
 
 - /etc/docker/daemon.json dosyasına aşağıdaki ayar girilir

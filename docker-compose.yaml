@@ -13,4 +13,10 @@ services:
     ports:
       - 8181:8181
 
+  nginx:
+    image: nginx
+    restart: always
+    ports:
+      - 80:80
+
   

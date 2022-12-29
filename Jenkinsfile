@@ -59,7 +59,6 @@ pipeline {
                 echo 'Deploying....'
 
                 sh '''
-                    cd $PROJECT_NAME     
                     scp -o StrictHostKeyChecking=no docker-compose.yaml jenkins@$APP_SERVER:/opt/$PROJECT_NAME/
                     ssh jenkins@$APP_SERVER "sudo docker-compose up  /opt/$PROJECT_NAME/docker-compose.yaml" 
                 '''

@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Building jar packages'
                 sh '''
-                    cd $PROJECT_NAME && pwd && ls -al
+                    pwd && ls -al
                     mvn clean package -DskipTests
                 '''
             }

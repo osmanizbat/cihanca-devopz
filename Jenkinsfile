@@ -60,7 +60,7 @@ pipeline {
 
                 sh '''
                     scp -o StrictHostKeyChecking=no docker-compose.yaml jenkins@$APP_SERVER:/opt/$PROJECT_NAME/
-                    ssh jenkins@$APP_SERVER "sudo docker-compose up  /opt/$PROJECT_NAME/docker-compose.yaml" 
+                    ssh jenkins@$APP_SERVER "docker-compose up -f /opt/$PROJECT_NAME/docker-compose.yaml" 
                 '''
             }
         }

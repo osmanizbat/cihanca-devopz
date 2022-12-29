@@ -9,7 +9,7 @@ sudo usermod -aG docker jenkins
 
 - Docker registtry kurulumu
 ~~~
- docker run -dit --restart unless-stopped --name registry registry:2
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
 ~~~
 
 # app-server sunucusuna Docker kurulumu
@@ -17,7 +17,11 @@ sudo usermod -aG docker jenkins
 ~~~
 sudo apt install docker.io docker-compose
 sudo docker run --rm hello-world
-sudo usermod -aG docker $USER
 ~~~
 
-
+- /etc/docker/daemon.json dosyasına aşağıdaki ayar girilir
+~~~
+{
+ "insecure-registries":["jenkins:5000"]
+}
+~~~

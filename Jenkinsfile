@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PROJECT_NAME = 'cihanca-devopz'
-        APP_SERVER = '192.168.1.28'
+        APP_SERVER = 'app-server'
         DOCKER_REGISTRY = 'localhost:5000'
     }    
 

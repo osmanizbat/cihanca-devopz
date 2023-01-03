@@ -15,13 +15,13 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<User> save(@RequestBody User user) {
         User response = userService.save(user);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<List<User>> list() {
         return ResponseEntity.ok(userService.list());
     }

@@ -3,11 +3,15 @@ server:
     context-path: /api/adopt
   port: 8182
 
-database: h2
-
 spring:
   application:
     name: adopt-service
+  datasource:
+    url: jdbc:mysql://mysql-server:3306/devopz
+    username: devopz
+    password: changeme
+    hikari:
+      maximum-pool-size: 10    
   jpa:
     hibernate:
       ddl-auto: update

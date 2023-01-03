@@ -1,11 +1,15 @@
 server:
   port: 8181
 
-database: h2
-
 spring:
   application:
     name: user-management
+  datasource:
+    url: jdbc:mysql://mysql-server:3306/devopz
+    username: devopz
+    password: changeme
+    hikari:
+      maximum-pool-size: 10    
   jpa:
     hibernate:
       ddl-auto: update

@@ -3,15 +3,11 @@ server:
     context-path: /api/user
   port: 8181
 
+database: h2
+
 spring:
   application:
     name: user-management
-  datasource:
-    url: jdbc:mysql://52.164.221.212:23307/devopz
-    username: root
-    password: sP539#&I
-    hikari:
-      maximum-pool-size: 10
   jpa:
     hibernate:
       ddl-auto: update

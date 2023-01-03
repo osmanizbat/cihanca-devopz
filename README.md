@@ -69,5 +69,7 @@ Bu eğitimde https://github.com/osmanizbat/cicd-training-1 eğitiminde Virtualbo
     ~~~
     curl -v -H "Content-Type: application/json" -X POST http://localhost/user-management/users \
         -d '{"name": "test", "email": "oizbat@gmail.com"}'
+    ~~~
+    ~~~    
     curl -v -H "Content-Type: application/json" -X GET http://localhost/user-management/users
     ~~~

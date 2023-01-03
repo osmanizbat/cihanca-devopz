@@ -65,4 +65,9 @@ Bu eğitimde https://github.com/osmanizbat/cicd-training-1 eğitiminde Virtualbo
     docker logs cihanca-devopz_adopt-service_1 -f
     ~~~
 
-8. Web tarayıcıda http://app-server:8080 adresi açılarak uygulamaya erişilir.
+8. app-server console'unda aşağıdaki komutlarla örnek kayıt ekleme listeleme yapılır.
+    ~~~
+    curl -v -H "Content-Type: application/json" -X POST http://localhost/user-management/users \
+        -d '{"name": "test", "email": "oizbat@gmail.com"}'
+    curl -v -H "Content-Type: application/json" -X GET http://localhost/user-management/users
+    ~~~

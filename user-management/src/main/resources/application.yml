@@ -1,6 +1,4 @@
 server:
-  servlet:
-    context-path: /api/user
   port: 8181
 
 database: h2

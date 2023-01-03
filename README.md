@@ -58,9 +58,11 @@ Bu eğitimde https://github.com/osmanizbat/cicd-training-1 eğitiminde Virtualbo
 
 6. http://jenkins:8080 adresinden Jenkins'in web arayüzüne girerek pipeline oluşturarak "Pipeline script from SCM / Repository URL" kısmına bu git repository'nin adresi yazılır (https://github.com/osmanizbat/cihanca-devopz)
 
-7. Pipeline çalıştırıldıktan sonra app-server'da aşağıdaki komutla servisin çalışıp çalışmadığı kontrol edilir.  
+7. Pipeline çalıştırıldıktan sonra app-server'da ilgili containerların çalışıp çalışmadığı kontrol edilir.  
     ~~~
-    sudo systemctl status spring-petclinic.service
+    docker ps
+    docker logs cihanca-devopz_user-management_1 -f
+    docker logs cihanca-devopz_adopt-service_1 -f
     ~~~
 
 8. Web tarayıcıda http://app-server:8080 adresi açılarak uygulamaya erişilir.

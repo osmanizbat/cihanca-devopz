@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/save")
+    @PostMapping("/")
     public ResponseEntity<User> save(@RequestBody User user) {
         User response = userService.save(user);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/list")
+    @GetMapping("/")
     public ResponseEntity<List<User>> list() {
         return ResponseEntity.ok(userService.list());
     }

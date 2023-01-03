@@ -23,7 +23,8 @@ services:
     environment:
       MYSQL_DATABASE: devopz
       MYSQL_USER: devopz
-      MYSQL_PASSWORD: changeme      
+      MYSQL_PASSWORD: changeme   
+      MYSQL_RANDOM_ROOT_PASSWORD: yes   
     volumes:
     - /opt/cihanca-devopz/data:/var/lib/mysql
     ports:

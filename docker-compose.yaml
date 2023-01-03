@@ -4,16 +4,12 @@ services:
   adopt-service:
     image: jenkins:5000/adopt-service
     restart: always
-    ports:
-    - 8182:8182
     depends_on:
     - mysql-server
 
   user-management:
     image: jenkins:5000/user-management
     restart: always
-    ports:
-    - 8181:8181
     depends_on:
     - mysql-server
 
@@ -27,8 +23,6 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"   
     volumes:
     - /opt/cihanca-devopz/data:/var/lib/mysql
-    ports:
-    - 3306:3306
 
   nginx:
     image: nginx
@@ -40,8 +34,5 @@ services:
     depends_on:
     - adopt-service
     - user-management
-
-  busybox:
-    image: busybox
 
   

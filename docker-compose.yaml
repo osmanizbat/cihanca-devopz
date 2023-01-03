@@ -4,12 +4,16 @@ services:
   adopt-service:
     image: jenkins:5000/adopt-service
     restart: always
+    ports:
+    - 8182:8182
     depends_on:
     - mysql-server
 
   user-management:
     image: jenkins:5000/user-management
     restart: always
+    ports:
+    - 8181:8181
     depends_on:
     - mysql-server
 
@@ -21,7 +25,9 @@ services:
       MYSQL_USER: devopz
       MYSQL_PASSWORD: changeme      
     volumes:
-    - /opt/cihanca-devopz:/var/lib/mysql
+    - /opt/cihanca-devopz/data:/var/lib/mysql
+    ports:
+    - 3306:3306
 
   nginx:
     image: nginx

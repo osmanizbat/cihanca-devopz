@@ -40,4 +40,7 @@ services:
     - adopt-service
     - user-management
 
+  busybox:
+    image: busybox
+
   

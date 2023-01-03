@@ -42,7 +42,7 @@ pipeline {
                 echo 'Deploying....'
 
                 sh '''
-                    scp -o StrictHostKeyChecking=no docker-compose.yaml nginx.conf jenkins@$APP_SERVER:/opt/$PROJECT_NAME/
+                    scp -o StrictHostKeyChecking=no docker-compose.yaml nginx.conf jenkins@$APP_SERVER:/opt/$PROJECT_NAME
                     ssh jenkins@$APP_SERVER docker-compose -f /opt/$PROJECT_NAME/docker-compose.yaml pull
                     ssh jenkins@$APP_SERVER docker-compose -f /opt/$PROJECT_NAME/docker-compose.yaml up -d
                 '''

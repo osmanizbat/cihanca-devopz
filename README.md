@@ -1,4 +1,4 @@
-Bu eğitimde https://github.com/osmanizbat/cicd-training-1 eğitiminde Virtualbox üzerinde hazırlamış olduğumuz __jenkins__ ve __app-server__ sanal sunucularıyle çalışmaya devam ediyoruz.
+Bu eğitimde [cicd-training-1](https://github.com/osmanizbat/cicd-training-1) eğitiminde Virtualbox üzerinde hazırlamış olduğumuz __jenkins__ ve __app-server__ sanal sunucularıyle çalışmaya devam ediyoruz.
 
 # Jenkins sunucusuna Docker kurulumu
 
@@ -31,7 +31,7 @@ Bu eğitimde https://github.com/osmanizbat/cicd-training-1 eğitiminde Virtualbo
 
 2. docker-compose paketi kurulur
     ~~~
-    sudo apt install docker-compose
+    sudo apt install docker-compose net-tools
     ~~~
 
 3. app-server sunucusundan jenkins sunucusundaki docker registry'e erişebilmek aşağıdaki ayar girilirerek docker servisi restart edilir
